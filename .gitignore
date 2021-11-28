@@ -1,0 +1,6 @@
+/out/
+/.idea/
+SD2021.iml
+/src/principal
+/src/chat/client/SimpleChat.form
+/src/chat/client/SimpleChat.java
