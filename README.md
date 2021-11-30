@@ -38,7 +38,8 @@ $ git clone <https://github.com/kaikimello/simple-chat-udp.git>
  
 + Run the main class
  
- 
+![Screenshot](client.jpeg)
+ ![Screenshot](client listener.jpeg)
 
 > # Techniques and technologies used
 + `Java 8`
