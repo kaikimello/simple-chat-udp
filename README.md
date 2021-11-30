@@ -1,7 +1,7 @@
 
 # Basic UDP chat communication system
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=Release%20date&message=NOVEMBER&color=7159c1&style=for-the-badge) 
-![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=in%20development&color=GREEN&style=for-the-badge)
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=LICENSE&message=MIT&color=4D7A18&style=for-the-badge)
 <br>
 <br>
@@ -32,6 +32,10 @@ Besides, it's nice to have an editor to work with code like [Intellij](https://w
 # Clone this repository
 $ git clone <https://github.com/kaikimello/simple-chat-udp.git>
 ```
++ Indicated that before fork to and after fork, clone with your repository link
+ 
++ Open the project in an IDE of your preference in Java language
+ 
 
 > # Techniques and technologies used
 + `Java 8`
