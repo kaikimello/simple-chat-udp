@@ -13,13 +13,17 @@ A basic chat system using UDP communication between two partners to exchange sim
 simple message exchange.
 + Only use UDP communication between partners.
 + Allow either side to end the communication.
-+ The received message must be identified with the name of the sender and the IP of the origin. <br> <h4>
-`Message received from 192.168.10.22 | Maria: Hi Pedro!` <h4>
++ The received message must be identified with the name of the sender and the IP of the origin. <br> 
+```bash
+Message received from 192.168.10.22 | Maria: Hi Pedro!
+```
+
 + The prompt for typing messages should display the user's login and computer IP
 where the software is running.
-<br> <h4>
-`192.168.10.10 | Pedro:` <h4>
 
+```bash
+192.168.10.10 | Pedro:
+```
 ### ✔️ Prerequisites
 
 Before starting, you will need to have the following tools installed on your machine:
