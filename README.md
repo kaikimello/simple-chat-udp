@@ -36,6 +36,9 @@ $ git clone <https://github.com/kaikimello/simple-chat-udp.git>
  
 + Open the project in an IDE of your preference in Java language
  
++ Run the main class
+ 
+ 
 
 > # Techniques and technologies used
 + `Java 8`
