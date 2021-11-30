@@ -38,11 +38,14 @@ $ git clone <https://github.com/kaikimello/simple-chat-udp.git>
  
 + Run the main class
  
-![Screenshot](client.jpeg)
- ![Screenshot](client listener.jpeg)
+ <b> Below is the communication example based on what will appear on your terminal  🔽 </b>
+ 
+![client](clientlistener.jpeg)
+![client](client.jpeg)
+
 
 > # Techniques and technologies used
-+ `Java 8`
++ `Java 16`
 + `Intellij IDEA`
 
 ## Autores
