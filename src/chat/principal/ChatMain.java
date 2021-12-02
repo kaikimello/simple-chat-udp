@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class ChatMain {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-//teste commit
+//teste committ
         try {
             int porta = -1;
             String nome;
