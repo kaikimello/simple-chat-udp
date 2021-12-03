@@ -1,7 +1,7 @@
 
 # Basic UDP chat communication system
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=Release%20date&message=NOVEMBER&color=7159c1&style=for-the-badge) 
-![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=in%20development&color=GREEN&style=for-the-badge)
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=LICENSE&message=MIT&color=4D7A18&style=for-the-badge)
 <br>
 <br>
@@ -13,13 +13,17 @@ A basic chat system using UDP communication between two partners to exchange sim
 simple message exchange.
 + Only use UDP communication between partners.
 + Allow either side to end the communication.
-+ The received message must be identified with the name of the sender and the IP of the origin. <br> <h4>
-`Message received from 192.168.10.22 | Maria: Hi Pedro!` <h4>
++ The received message must be identified with the name of the sender and the IP of the origin. <br> 
+```bash
+Message received from 192.168.10.22 | Maria: Hi Pedro!
+```
+
 + The prompt for typing messages should display the user's login and computer IP
 where the software is running.
-<br> <h4>
-`192.168.10.10 | Pedro:` <h4>
 
+```bash
+192.168.10.10 | Pedro:
+```
 ### ✔️ Prerequisites
 
 Before starting, you will need to have the following tools installed on your machine:
@@ -32,9 +36,20 @@ Besides, it's nice to have an editor to work with code like [Intellij](https://w
 # Clone this repository
 $ git clone <https://github.com/kaikimello/simple-chat-udp.git>
 ```
++ Indicated that before fork to and after fork, clone with your repository link
+ 
++ Open the project in an IDE of your preference in Java language
+ 
++ Run the main class
+ 
+ <b> Below is the communication example based on what will appear on your terminal  🔽 </b>
+ 
+![client](clientlistener.jpeg)
+![client](client.jpeg)
+
 
 > # Techniques and technologies used
-+ `Java 8`
++ `Java 16`
 + `Intellij IDEA`
 
 ## Autores
