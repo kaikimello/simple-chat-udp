@@ -12,8 +12,10 @@ public class UDPClient {
     public static final String PURPLE_BOLD_BRIGHT = "\033[1;95m";
 
 
+
     private String nome;
     private InetAddress ip;
+    private InetAddress ipListener;
     private int porta;
 
     Scanner input = new Scanner(System.in);
@@ -22,6 +24,13 @@ public class UDPClient {
         this.ip = ip;
         this.porta = porta;
         this.nome = nome;
+    }
+
+    public UDPClient(InetAddress ipClient, int porta, String nome, InetAddress ipListener) {
+        this.ip = ipClient;
+        this.porta = porta;
+        this.nome = nome;
+        this.ipListener = ipListener;
     }
 
     public void listener(){
@@ -48,7 +57,7 @@ public class UDPClient {
                 String dadoClient = new String(pacoteRecebido.getData(), StandardCharsets.UTF_8);
                 String mensagemClient = dadoClient.substring(0, dadoClient.indexOf("&"));
                 String nomeCliente = dadoClient.substring(dadoClient.indexOf("&")+1);
-                System.out.println(PURPLE_BOLD_BRIGHT + "Mensagem Recebida de "+ ipClientRemetente.getHostAddress() + " | " + nomeCliente.trim() + ": " + mensagemClient + TEXT_RESET);
+                System.out.println(PURPLE_BOLD_BRIGHT + "Mensagem Recebida de "+ ipClientRemetente.getHostAddress() + ":"+ portaUserRemetente + " | " + nomeCliente.trim() + ": " + mensagemClient + TEXT_RESET);
 
                 /*
                 * Solicita que o Cliente Listener responda, caso a mensagem seja /bye encerra a
@@ -64,16 +73,15 @@ public class UDPClient {
                 /*
                 * Concatena o nome do Cliente Listener a mensagem, converte para bytes, e envia o datagrama
                 * */
+
                 dadoListener = dadoListener + "&" + this.nome;
                 enviarBufferClient = dadoListener.getBytes();
                 DatagramPacket enviarPacoteListener = new DatagramPacket(enviarBufferClient, enviarBufferClient.length, ipClientRemetente, portaUserRemetente);
                 listenerSocket.send(enviarPacoteListener);
             }
             listenerSocket.close();
-        } catch (SocketException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        }  catch (IOException ex) {
+            ex.printStackTrace();
         }
     }
 
@@ -95,11 +103,11 @@ public class UDPClient {
                     break;
                 }
                 /*
-                * Concatena o nome do Cliente Listener a mensagem, converte para bytes, e envia o datagrama
+                * Concatena o nome do Cliente a mensagem, converte para bytes, e envia o datagrama
                 * */
                 dadoCliente = dadoCliente + "&" + this.nome;
                 bufferEnviarListener = dadoCliente.getBytes();
-                DatagramPacket pacoteEnviar = new DatagramPacket(bufferEnviarListener, bufferEnviarListener.length, ip, porta);
+                DatagramPacket pacoteEnviar = new DatagramPacket(bufferEnviarListener, bufferEnviarListener.length, ipListener, porta);
                 clientSocket.send(pacoteEnviar);
 
                 /*
@@ -110,17 +118,14 @@ public class UDPClient {
                 clientSocket.receive(pacoteRecebido);
                 String dadosRecebidosListener = new String(pacoteRecebido.getData(), StandardCharsets.UTF_8);
                 InetAddress ipListener = pacoteRecebido.getAddress();
+                int portaUserListener = pacoteRecebido.getPort();
                 String mensagemListener = dadosRecebidosListener.substring(0, dadosRecebidosListener.indexOf("&"));
                 String nomeListener = dadosRecebidosListener.substring(dadosRecebidosListener.indexOf("&")+1);
-                System.out.println(CYAN_BOLD_BRIGHT+ "Mensagem recebida de "+ ipListener.getHostAddress() + " | " + nomeListener.trim() + ": " + mensagemListener + TEXT_RESET);
+                System.out.println(CYAN_BOLD_BRIGHT+ "Mensagem recebida de "+ ipListener.getHostAddress() + ":" + portaUserListener + " | " + nomeListener.trim() + ": " + mensagemListener + TEXT_RESET);
             }
             clientSocket.close();
-        } catch (UnknownHostException ex1) {
-            ex1.printStackTrace();
-        } catch (SocketException ex2) {
-            ex2.printStackTrace();
-        } catch (IOException ex3) {
-            ex3.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
         System.out.println();
     }
