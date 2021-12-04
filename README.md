@@ -44,8 +44,8 @@ $ git clone <https://github.com/kaikimello/simple-chat-udp.git>
  
  <b> Below is the communication example based on what will appear on your terminal  🔽 </b>
  
-![client](clientlistener.jpeg)
-![client](client.jpeg)
+![clientListener](ClientListener.png)
+![client](Cliente.png)
 
 
 > # Techniques and technologies used
