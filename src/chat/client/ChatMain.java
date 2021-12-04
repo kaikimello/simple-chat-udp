@@ -35,7 +35,6 @@ public class ChatMain {
                 } while((porta < 4000 || porta > 6000));
 
                 ip = InetAddress.getByName(pegarIpMaquina()[0]);
-                System.out.println(ip);
 
                 client = new UDPClient(ip, porta, nome);
                 client.listener();

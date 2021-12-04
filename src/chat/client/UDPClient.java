@@ -87,15 +87,22 @@ public class UDPClient {
 
     public void sendMenssage(){
         try {
+            /*
+            * Criar um Socket UDP
+            * */
             DatagramSocket clientSocket = new DatagramSocket();
 
             while (true) {
+                /*
+                * Criar buffer de bytes que vão enviar e receber a mensagem do listener
+                * Solicitar a mensagem do cliente
+                * */
                 byte[] bufferEnviarListener;
                 byte[] bufferReceberListener = new byte[1024];
                 System.out.println(ip.getHostAddress() + " | " + this.nome);
                 String dadoCliente = input.nextLine();
                 /*
-                 * Caso a mensagem digitada seja /bye é finalizada a comunicação
+                 * Caso a mensagem digitada seja /bye é finalizada a comunicação do lado do cliente
                  */
 
                 if (dadoCliente.equalsIgnoreCase("/bye")){
@@ -103,7 +110,7 @@ public class UDPClient {
                     break;
                 }
                 /*
-                * Concatena o nome do Cliente a mensagem, converte para bytes, e envia o datagrama
+                * Concatena o nome do Cliente e a mensagem, converte para bytes, e envia o datagrama
                 * */
                 dadoCliente = dadoCliente + "&" + this.nome;
                 bufferEnviarListener = dadoCliente.getBytes();
@@ -111,7 +118,7 @@ public class UDPClient {
                 clientSocket.send(pacoteEnviar);
 
                 /*
-                * Cria um Datagrama Packet, recupera a mensagem, o Ip e o nome
+                * Cria um Datagrama Packet, recupera a mensagem, o Ip, porta e o nome do Cliente Listener
                 * Exibe a mensagem do Listener
                 * */
                 DatagramPacket pacoteRecebido = new DatagramPacket(bufferReceberListener, bufferReceberListener.length);
